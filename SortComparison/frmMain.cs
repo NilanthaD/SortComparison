@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Collections;
+using System.IO;
 
 namespace SortComparison
 {
@@ -30,7 +31,32 @@ namespace SortComparison
             // source: https://www.youtube.com/watch?v=_Z7bj3oG_1A
 
             label5.Text = AppDomain.CurrentDomain.BaseDirectory.ToString();
+
+            //Call the InitializeOutputFolder class
+            //source: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.createdirectory?view=netframework-4.7.2
+            String path = InitializeOutputFolder();
+            try
+            {
+                if (Directory.Exists(path))
+                {
+                    System.Windows.Forms.MessageBox.Show("Directory exists"); //Source: https://stackoverflow.com/questions/1806247/how-to-make-a-simple-popup-box-in-visual-c
+                    return;
+                }
+                DirectoryInfo di = Directory.CreateDirectory(path);
+                System.Windows.Forms.MessageBox.Show("Directory created");
+            }
+            catch (Exception e){
+                Console.WriteLine("The Process failed");
+            }
+            
         }
+
+        //10.  Create a new method called InitializeOutputFolder() and call it
+        private string InitializeOutputFolder()
+        {
+            return AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\output";
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
