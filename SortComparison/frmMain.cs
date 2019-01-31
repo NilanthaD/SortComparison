@@ -56,8 +56,7 @@ namespace SortComparison
 
             label5.Text = AppDomain.CurrentDomain.BaseDirectory.ToString();
 
-           
-
+            //Call the In
             //10. Call the InitializeOutputFolder class
             //source: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.createdirectory?view=netframework-4.7.2
             String path = InitializeOutputFolder();
