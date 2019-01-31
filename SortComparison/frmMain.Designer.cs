@@ -117,12 +117,13 @@
             // 
             // cmdSort
             // 
+            this.cmdSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.cmdSort.Location = new System.Drawing.Point(344, 257);
             this.cmdSort.Name = "cmdSort";
             this.cmdSort.Size = new System.Drawing.Size(75, 23);
             this.cmdSort.TabIndex = 5;
             this.cmdSort.Text = "Sort";
-            this.cmdSort.UseVisualStyleBackColor = true;
+            this.cmdSort.UseVisualStyleBackColor = false;
             this.cmdSort.Click += new System.EventHandler(this.cmdSort_Click);
             // 
             // pnlSort1
@@ -230,7 +231,7 @@
             this.txtOutputFolder.Name = "txtOutputFolder";
             this.txtOutputFolder.Size = new System.Drawing.Size(215, 20);
             this.txtOutputFolder.TabIndex = 16;
-            this.txtOutputFolder.Text = "E:\\Sort";
+            this.txtOutputFolder.Text = "C:\\Sort";
             // 
             // label4
             // 
@@ -246,9 +247,8 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(9, 379);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 13);
+            this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Base Directory";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6

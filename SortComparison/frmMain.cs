@@ -26,7 +26,14 @@ namespace SortComparison
         public frmMain()
         {
             InitializeComponent();
+            //7. Set its SelectedIndex to an integer so that the default is Bucket Sort.
+            cboAlg1.SelectedIndex = 3;
 
+            //8. Set its SelectedIndex to an integer so that the default is Quick Sort.
+            cboAlg2.SelectedIndex = 12;
+
+
+            //9. Use AppDomain.CurrentDomain.BaseDirectory.ToString() to get the base directory
             // Show base directory on the buttom of the fram.
             // source: https://www.youtube.com/watch?v=_Z7bj3oG_1A
 
@@ -60,7 +67,12 @@ namespace SortComparison
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //6. Set the default falue to 20 (Team 2; 10X2 = 20)
             this.tbSamples.Value = 20;
+
+            // 11. Call cmdShuffle's PerformClick() method before exiting Form1_Load
+            // source: https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.button.performclick?view=netframework-4.7.2
+            cmdShuffle.PerformClick();
         }
 
         public void Randomize(IList list)
@@ -287,12 +299,12 @@ namespace SortComparison
 
         private void cboAlg1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboAlg1.SelectedIndex = 3;
+            
         }
 
         private void cboAlg2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboAlg2.SelectedIndex = 12;
+            
         }
 
         private void label5_Click(object sender, EventArgs e)
