@@ -25,10 +25,7 @@ namespace SortComparison
 
         public frmMain()
         {
-            InitializeComponent();
-           
-
-
+            InitializeComponent();   
         }
 
         //10.  Create a new method called InitializeOutputFolder() and call it
@@ -36,7 +33,6 @@ namespace SortComparison
         {
             return AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\output";
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -56,7 +52,10 @@ namespace SortComparison
 
             label5.Text = AppDomain.CurrentDomain.BaseDirectory.ToString();
 
-            //Call the In
+            // 11. Call cmdShuffle's PerformClick() method before exiting Form1_Load
+            // source: https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.button.performclick?view=netframework-4.7.2
+            cmdShuffle.PerformClick();
+
             //10. Call the InitializeOutputFolder class
             //source: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.createdirectory?view=netframework-4.7.2
             String path = InitializeOutputFolder();
@@ -65,7 +64,7 @@ namespace SortComparison
                 if (Directory.Exists(path))
                 {
                     System.Windows.Forms.MessageBox.Show("Directory exists"); //Source: https://stackoverflow.com/questions/1806247/how-to-make-a-simple-popup-box-in-visual-c
-                   // return;
+                    return;
                 }
                 DirectoryInfo di = Directory.CreateDirectory(path);
                 System.Windows.Forms.MessageBox.Show("Directory created");
@@ -75,12 +74,6 @@ namespace SortComparison
                 Console.WriteLine("The Process failed");
                 return;
             }
-
-            // 11. Call cmdShuffle's PerformClick() method before exiting Form1_Load
-            // source: https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.button.performclick?view=netframework-4.7.2
-            cmdShuffle.PerformClick();
-
-
         }
 
         public void Randomize(IList list)
