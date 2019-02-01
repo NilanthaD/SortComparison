@@ -107,12 +107,13 @@
             // 
             // cmdShuffle
             // 
+            this.cmdShuffle.BackColor = System.Drawing.Color.Lime;
             this.cmdShuffle.Location = new System.Drawing.Point(263, 257);
             this.cmdShuffle.Name = "cmdShuffle";
             this.cmdShuffle.Size = new System.Drawing.Size(75, 23);
             this.cmdShuffle.TabIndex = 4;
             this.cmdShuffle.Text = "Shuffle";
-            this.cmdShuffle.UseVisualStyleBackColor = true;
+            this.cmdShuffle.UseVisualStyleBackColor = false;
             this.cmdShuffle.Click += new System.EventHandler(this.cmdShuffle_Click);
             // 
             // cmdSort
